@@ -9,7 +9,7 @@ Dependencies
 
 The application should work on every modern linux system, it relies on `acpi`
 and `iwlist`.  It also need django (of course), sqlite and jquery.
-The project contains the single activity `sysinfo`.
+The project contains the single activity *sysinfo*.
 
 Usage
 -----
