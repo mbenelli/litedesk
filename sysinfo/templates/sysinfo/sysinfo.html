@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<head>
+  <script src="{% static "sysinfo/jquery-2.0.3.min.js" %}"></script>
+  <script src="{% static "sysinfo/cmds.js" %}"></script>
+  <link rel="stylesheet type= "text/css"
+        href="{% static "sysinfo/sysinfo.css" %}"/>
+  <script>
+    $(document).ready( function () {
+      var fn = cmds['{{ id }}'];
+      fn();
+      setInterval(fn, {{ refresh_ms }});
+    })
+  </script>
+</head>
+<body>
+  <div id="wrapper">
+    <h1>{{ title }}</h1>
+    <div id="notifications"></div>
+    {% if id == 'battery' %}
+      <div class="meter">
+	<span></span>
+      </div>
+    {% endif %}
+    <div id="content"></div>
+  </div>
+</body>
+
